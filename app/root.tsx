@@ -11,11 +11,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { AppShell } from '@mantine/core';
-import { useDisclosure } from '@mantine/hooks';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [opened, { toggle }] = useDisclosure();
-
   return (
     <html lang="en">
       <head>
