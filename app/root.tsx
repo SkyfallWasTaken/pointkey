@@ -1,6 +1,8 @@
 import "@mantine/core/styles.css";
+import "@fontsource-variable/outfit";
+import "@fontsource-variable/jetbrains-mono";
 
-import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { MantineProvider, ColorSchemeScript, Burger, Group } from "@mantine/core";
 import {
   Links,
   Meta,
@@ -12,7 +14,7 @@ import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 export function Layout({ children }: { children: React.ReactNode }) {
-  const [opened] = useDisclosure();
+  const [opened, { toggle }] = useDisclosure();
 
   return (
     <html lang="en">
@@ -26,6 +28,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <MantineProvider
           theme={{
+            fontFamily: '"Outfit Variable", system-ui, sans-serif',
+            fontFamilyMonospace: '"JetBrains Mono Variable", Monaco, Courier, monospace',
             colors: {
               // override dark colors to change them for all components
               dark: [
@@ -48,7 +52,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
             padding="md"
           >
             <AppShell.Header>
-              Pointkey
+              <Group h="100%" px="md">
+                <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+                <p>Pointkey</p>
+              </Group>
             </AppShell.Header>
             <AppShell.Main>{children}</AppShell.Main>
           </AppShell>
