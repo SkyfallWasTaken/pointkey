@@ -2,7 +2,7 @@ import "@mantine/core/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource-variable/jetbrains-mono";
 
-import { MantineProvider, ColorSchemeScript, Burger, Group } from "@mantine/core";
+import { MantineProvider, ColorSchemeScript, Group } from "@mantine/core";
 import {
   Links,
   Meta,
@@ -53,7 +53,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           >
             <AppShell.Header>
               <Group h="100%" px="md">
-                <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
                 <p>Pointkey</p>
               </Group>
             </AppShell.Header>
